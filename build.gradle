@@ -1,0 +1,49 @@
+apply plugin: 'java'
+
+ext {
+    javaVersion = '1.8'
+    springBootVersion = '1.3.3.RELEASE'
+    springVersion = '4.2.5.RELEASE'
+    junitVersion = '4.12'
+    mockitoVersion = '1.10.19'
+    lombokVersion = '1.16.8'
+    hamcrestVersion = '1.3'
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE"
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+        testCompile "junit:junit:$junitVersion"
+        testCompile "org.mockito:mockito-core:$mockitoVersion"
+        testCompile "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    }
+
+    compileJava {
+        options.fork = true
+        options.incremental = true
+        options.deprecation = true
+        options.encoding = 'UTF-8'
+
+        sourceCompatibility = "$javaVersion"
+        targetCompatibility = "$javaVersion"
+    }
+}

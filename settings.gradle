@@ -1,0 +1,5 @@
+rootProject.name = 'custom-menu-web'
+
+include ':arrowcraft-web-config',
+        ':arrowcraft-web-hello',
+        ':arrowcraft-web-integration-test'
