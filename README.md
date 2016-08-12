@@ -1,0 +1,3 @@
+- run build with `./gradlew clean build`
+- start local server `./gradlew clean bootRun`
+- merge with master to deploy to `arrowcraft-web.herokuapp.com`
