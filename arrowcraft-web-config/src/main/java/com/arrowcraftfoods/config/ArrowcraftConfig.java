@@ -9,7 +9,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @EnableAutoConfiguration
 @ComponentScan(basePackages = "com.arrowcraftfoods")
-public class ArrowcraftConfig extends WebMvcConfigurerAdapter {
+public class
+ArrowcraftConfig extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args){
         SpringApplication.run(ArrowcraftConfig.class, args);
